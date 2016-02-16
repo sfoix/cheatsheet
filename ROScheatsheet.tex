@@ -109,7 +109,7 @@
 \newlength{\MyLen}
 \settowidth{\MyLen}{\texttt{letterpaper}/\texttt{a4paper} \ }
 
-\vspace{-2mm}
+%\vspace{-2mm}
 \section{Filesystem Management Tools}
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
@@ -137,7 +137,7 @@
 \texttt{\href{http://wiki.ros.org/roscreate}{roscreate}-stack} & Creates a new ROS stack.\\
 \texttt{\href{http://wiki.ros.org/rosmake}{rosmake}} & Builds a ROS package.\\
 \fi
-\texttt{\href{http://wiki.ros.org/rqt\_dep}{rqt\_dep}} & Displays package structure and dependencies.\\
+\texttt{\href{http://wiki.ros.org/rqt\_dep}{rqt\_dep}} & Displays package structure and dependencies.
 \end{tabular}
 
 \begin{nstabbing}
@@ -159,12 +159,12 @@ Us\=age:\\
 \> \texttt{\$ roscreate-pkg [package\_name]}\\
 \> \texttt{\$ rosmake [package]}\\
 \fi
-\> \texttt{\$ rqt\_dep [options]}\\
+\> \texttt{\$ rqt\_dep [options]}
 \end{nstabbing}
 
-\vspace{-5mm}
+%\vspace{-5mm}
 \section{Start-up and Process Launch Tools}
-\vspace{-2 mm}
+\vspace{-1mm}
 \subsection{\href{http://wiki.ros.org/roscore}{roscore}}
 The basis \href{http://wiki.ros.org/Nodes}{nodes} and programs for ROS-based systems. A roscore must be running for ROS nodes to communicate.\\
 \begin{nstabbing}
@@ -172,7 +172,7 @@ Us\=age:\\
 \> \texttt{\$ roscore}
 \end{nstabbing}
 
-\vspace{-2 mm}
+\vspace{-1mm}
 \subsection{\href{http://wiki.ros.org/rosrun}{rosrun}}
 Runs a ROS package's executable with minimal typing.\\
 \begin{nstabbing}
@@ -181,9 +181,8 @@ Us\=age:\\
 \end{nstabbing}
 \begin{nstabbing}
 Ex\=ample (runs \href{http://wiki.ros.org/turtlesim}{turtlesim}):\\
-\> \texttt{\$ rosrun turtlesim turtlesim\_node}\\
+\> \texttt{\$ rosrun turtlesim turtlesim\_node}
 \end{nstabbing}
-\vspace{-1 mm}
 
 \subsection{\href{http://wiki.ros.org/roslaunch}{roslaunch}}
 Starts a roscore (if needed), \href{http://wiki.ros.org/roslaunch/XML#Minimal_Example}{local nodes}, \href{http://wiki.ros.org/roslaunch/XML/machine}{remote nodes} via SSH, and sets parameter server \href{http://wiki.ros.org/roslaunch/XML#Setting_parameters}{parameters}.\\
@@ -196,7 +195,6 @@ E\=x\=amples:\\
 \> Launch on the local nodes:\\
 \> \> \texttt{\$ roslaunch --local package\_name file\_name.launch}
 \end{nstabbing}
-
 
 \section{Introspection and Command Tools}
 
@@ -211,6 +209,7 @@ Commands: \\
 \texttt{rosnode machine} & List nodes running on a machine. \\
 \texttt{rosnode kill}    & Kill a running node.
 \end{tabular}
+
 \begin{nstabbing}
 E\=x\=amples:\\
 \> Kill all nodes:\\
@@ -220,7 +219,6 @@ E\=x\=amples:\\
 \> Ping all nodes:\\
 \> \> \texttt{\$ rosnode ping --all}
 \end{nstabbing}
-
 
 \subsection{\href{http://wiki.ros.org/rostopic}{rostopic}}
 A tool for displaying information about ROS \href{http://wiki.ros.org/Topics}{topics}, including publishers, subscribers, publishing rate, and messages.\\
@@ -268,7 +266,7 @@ E\=x\=amples:\\
 \> Pipe the output of rosservice to rossrv to view the srv type:\\
 \> \>\texttt{\$ rosservice type add\_two\_ints | rossrv show}\\
 \> Display all services of a particular type:\\
-\> \>\texttt{\$ rosservice find rospy\_tutorials/AddTwoInts}\\
+\> \>\texttt{\$ rosservice find rospy\_tutorials/AddTwoInts}
 \end{nstabbing}
 
 \subsection{\href{http://wiki.ros.org/rosparam}{rosparam}}
@@ -324,7 +322,7 @@ Commands: \\
 \texttt{rosbag play}  & Play content of one or more bag files. \\
 \texttt{rosbag compress}  & Compress one or more bag files. \\
 \texttt{rosbag decompress}  & Decompress one or more bag files. \\
-\texttt{rosbag filter}  & Filter the contents of the bag. \\
+\texttt{rosbag filter}  & Filter the contents of the bag.
 \end{tabular}
 \begin{nstabbing}
 E\=x\=amples:\\
@@ -333,10 +331,9 @@ E\=x\=amples:\\
 \> Replay all messages without waiting:\\
 \> \>\texttt{\$ rosbag play -a demo\_log.bag}\\
 \> Replay several bag files at once:\\
-\> \>\texttt{\$ rosbag play demo1.bag demo2.bag}\\
+\> \>\texttt{\$ rosbag play demo1.bag demo2.bag}
 \end{nstabbing}
 
-\vspace{-2mm}
 %\section{tf Command-line Tools}
 \subsection{\href{http://wiki.ros.org/tf2/Tutorials/Introduction to tf2\#Using_tf_echo}{tf\_echo}}
 A tool that prints the information about a particular transformation between a source\_frame and a target\_frame.\\
@@ -346,51 +343,44 @@ Us\=age:\\
 \> \texttt{\$ rosrun tf tf\_echo <source\_frame> <target\_frame>}\\
 E\=x\=amples:\\
 \> To echo the transform between /map and /odom:\\
-\> \>\texttt{\$ rosrun tf tf\_echo /map /odom}\\
+\> \>\texttt{\$ rosrun tf tf\_echo /map /odom}
 \end{nstabbing}
 
 %\begin{center}
 %     \Large{\textbf{ROS Indigo Cheatsheet}} \\
 %\end{center}
 
-\vspace*{-3mm}
 \section{Logging Tools}
-\vspace*{-1mm}
 
 \subsection{\href{http://wiki.ros.org/rqt_console}{rqt\_console}}
 A tool to display and filtering messages published on rosout.\\
-\includegraphics[width=0.6\columnwidth]{rqt_console.png}
+\includegraphics[height=0.17\columnwidth]{rqt_console.png}
 \vspace*{-1mm}
 \begin{nstabbing}
 Us\=age:\\
-\> \texttt{\$ rqt\_console}\\
+\> \texttt{\$ rqt\_console}
 \end{nstabbing}
-\vspace*{-3mm}
-
 
 \subsection{\href{http://wiki.ros.org/rqt_bag}{rqt\_bag}}
 A tool for visualizing, inspecting, and replaying bag files.\\
-\includegraphics[width=0.6\columnwidth]{rqt_bag.png}
+\includegraphics[height=0.17\columnwidth]{rqt_bag.png}
 \vspace*{-1mm}
 \begin{nstabbing}
 Us\=age, viewing:\\
 \> \texttt{\$ rqt\_bag bag\_file.bag}\\
 Us\=age, bagging:\\
-\> \texttt{\$ rqt\_bag *press the big red record button.*}\\
+\> \texttt{\$ rqt\_bag *press the big red record button.*}
 \end{nstabbing}
-\vspace*{-3mm}
 
 \subsection{\href{http://wiki.ros.org/rqt_logger_level}{rqt\_logger\_level}}
 Change the logger level of ROS nodes. This will increase or decrease the information they log to the screen and rqt\_console.\\
 \vspace*{-1mm}
 \begin{nstabbing}
 Us\=age:\\
-\> \texttt{viewing \$ rqt\_logger\_level}\\
+\> \texttt{viewing \$ rqt\_logger\_level}
 \end{nstabbing}
-\vspace*{-3mm}
 
 \section{Introspection \& Command Tools}
-\vspace*{-1mm}
 
 \subsection{\href{http://wiki.ros.org/rqt_topic}{rqt\_topic}}
 A tool for viewing published topics in real time.\\
@@ -398,9 +388,8 @@ A tool for viewing published topics in real time.\\
 \begin{nstabbing}
 Us\=age:\\
 \> \texttt{\$ rqt}\\
-\> \texttt{\footnotesize Plugin Menu->Topic->Topic Monitor}\\
+\> \texttt{\footnotesize Plugin Menu->Topic->Topic Monitor}
 \end{nstabbing}
-\vspace*{-3mm}
 
 \subsection{\href{http://wiki.ros.org/rqt_msg}{rqt\_msg}, \href{http://wiki.ros.org/rqt_srv}{rqt\_srv}, and \href{http://wiki.ros.org/rqt_action}{rqt\_action}}
 A tool for viewing available msgs, srvs, and actions.\\
@@ -410,9 +399,8 @@ Us\=age:\\
 \> \texttt{\$ rqt}\\
 \> \texttt{\footnotesize Plugin Menu->Topic->Message Type Browser}\\
 \> \texttt{\footnotesize Plugin Menu->Service->Service Type Browser}\\
-\> \texttt{\footnotesize Plugin Menu->Action->Action Type Browser}\\
+\> \texttt{\footnotesize Plugin Menu->Action->Action Type Browser}
 \end{nstabbing}
-\vspace*{-3mm}
 
 \subsection{\href{http://wiki.ros.org/rqt_top}{rqt\_top}}
 A tool for ROS specific process monitoring.\\
@@ -420,9 +408,8 @@ A tool for ROS specific process monitoring.\\
 \begin{nstabbing}
 Us\=age:\\
 \> \texttt{\$ rqt}\\
-\> \texttt{\footnotesize Plugin Menu->Introspection->Process Monitor}\\
+\> \texttt{\footnotesize Plugin Menu->Introspection->Process Monitor}
 \end{nstabbing}
-\vspace*{-3mm}
 
 \subsection{\href{http://wiki.ros.org/rqt_publisher}{rqt\_publisher}, and \href{http://wiki.ros.org/rqt_service_caller}{rqt\_service\_caller}}
 Tools for publishing messages and calling services.\\
@@ -431,10 +418,8 @@ Tools for publishing messages and calling services.\\
 Us\=age:\\
 \> \texttt{\$ rqt}\\
 \> \texttt{\footnotesize Plugin Menu->Topic->Message Publisher}\\
-\> \texttt{\footnotesize Plugin Menu->Service->Service Caller}\\
+\> \texttt{\footnotesize Plugin Menu->Service->Service Caller}
 \end{nstabbing}
-\vspace*{-3mm}
-
 
 \subsection{\href{http://wiki.ros.org/rqt_reconfigure}{rqt\_reconfigure}}
 A tool for dynamically reconfiguring ROS parameters.\\
@@ -442,23 +427,19 @@ A tool for dynamically reconfiguring ROS parameters.\\
 \begin{nstabbing}
 Us\=age:\\
 \> \texttt{\$ rqt}\\
-\> \texttt{\footnotesize Plugin Menu->Configuration->Dynamic Reconfigure}\\
+\> \texttt{\footnotesize Plugin Menu->Configuration->Dynamic Reconfigure}
 \end{nstabbing}
-\vspace*{-3mm}
 
 \subsection{\href{http://wiki.ros.org/rqt_graph}{rqt\_graph}, and \href{http://wiki.ros.org/rqt_dep}{rqt\_dep}}
 Tools for displaying graphs of running ROS nodes with connecting topics and package dependancies respectively.\\
-\includegraphics[width=0.45\columnwidth]{rqt_graph.png}
-\includegraphics[width=0.53\columnwidth]{rqt_dep.png}
-\vspace*{-3mm}
+\includegraphics[height=0.17\columnwidth]{rqt_graph.png}
+\includegraphics[height=0.17\columnwidth]{rqt_dep.png}
+\vspace*{-1mm}
 \begin{nstabbing}
 Us\=age:\\
 \> \texttt{\$ rqt\_graph}\\
-\> \texttt{\$ rqt\_dep}\\
+\> \texttt{\$ rqt\_dep}
 \end{nstabbing}
-\vspace*{-3mm}
-
-
 
 \section{Development Environments}
 
@@ -471,7 +452,6 @@ Us\=age:\\
 \> \texttt{\footnotesize Plugin Menu->Miscellaneous Tools->Shell}\\
 \> \texttt{\footnotesize Plugin Menu->Miscellaneous Tools->Python Console}
 \end{nstabbing}
-\vspace*{-1mm}
 
 \section{Data Visualization Tools}
 
@@ -483,12 +463,10 @@ Us\=age:\\
 \> \texttt{\$ rosrun tf2\_tools view\_frames.py}\\
 \> \texttt{\$ evince frames.pdf}
 \end{nstabbing}
-\vspace*{-2mm}
-
 
 \subsection{\href{http://wiki.ros.org/rqt_plot}{rqt\_plot}}
 A tool for plotting data from ROS topic fields.\\
-\includegraphics[width=0.6\columnwidth]{rqt_plot.png}
+\includegraphics[height=0.17\columnwidth]{rqt_plot.png}
 \vspace*{-1mm}
 \begin{nstabbing}
 E\=x\=amples:\\
@@ -497,37 +475,31 @@ E\=x\=amples:\\
 \> To graph the data all on the same plot:\\
 \> \>\texttt{\$ rqt\_plot /topic1/field1,/topic2/field2}\\
 \> To graph multiple fields of a message:\\
-\> \>\texttt{\$ rqt\_plot /topic1/field1:field2:field3}\\
+\> \>\texttt{\$ rqt\_plot /topic1/field1:field2:field3}
 \end{nstabbing}
-\vspace*{-2mm}
 
-\vspace*{-2mm}
 \subsection{\href{http://wiki.ros.org/rqt_image_view}{rqt\_image\_view}}
 A tool to display image topics.\\
-\includegraphics[width=0.5\columnwidth]{rqt_image_view.png}
-\vspace*{-2mm}
+\includegraphics[height=0.17\columnwidth]{rqt_image_view.png}
+\vspace*{-1mm}
 \begin{nstabbing}
 Us\=age:\\
-\> \texttt{\$ rqt\_image\_view}\\
+\> \texttt{\$ rqt\_image\_view}
 \end{nstabbing}
-\vspace*{-2mm}
 
-
-\vspace{1mm}
 \ifcatkin
 \section{ROS Indigo Catkin Workspaces}
 
-
 \subsection{\href{http://wiki.ros.org/catkin/Tutorials/create_a_workspace}{Create a catkin workspace}}
 Setup and use a new catkin workspace from scratch.
+\vspace*{-1mm}
 \begin{nstabbing}
 E\=x\=ample:\\
 \> \texttt{\$ source /opt/ros/indigo/setup.bash}\\
 \> \texttt{\$ mkdir -p \textasciitilde/catkin\_ws/src}\\
 \> \texttt{\$ cd \textasciitilde/catkin\_ws/src}\\
-\> \texttt{\$ catkin\_init\_workspace}\\
+\> \texttt{\$ catkin\_init\_workspace}
 \end{nstabbing}
-\vspace{-3mm}
 
 \subsection{\href{http://wiki.ros.org/catkin/Tutorials/CreatingPackage}{Checkout an existing ROS package}}
 Get a local copy of the code for an existing package and keep it up to date using \href{http://wiki.ros.org/catkin/Tutorials/workspace\_overlaying}{wstool}.
@@ -537,14 +509,10 @@ E\=x\=amples:\\
 \>\texttt{\$ cd \textasciitilde/catkin\_ws/src}\\
 \>\texttt{\$ wstool init}\\
 \>\texttt{\$ wstool set tut --git git://github.com/ros/ros\_tutorials.git}\\
-\>\texttt{\$ wstool update}\\
+\>\texttt{\$ wstool update}
 \end{nstabbing}
-\vspace{-3mm}
-
-
 
 \subsection{\href{http://wiki.ros.org/catkin/Tutorials/CreatingPackage}{Create a new catkin ROS package}}
-
 Create a new ROS catkin package in an existing workspace with \href{http://wiki.ros.org/catkin/Tutorials/CreatingPackage}{catkin create package}.% After using this you will need to edit the \href{http://wiki.ros.org/catkin/CMakeLists.txt}{CMakeLists.txt} to detail how you want your package built and add information to your \href{http://wiki.ros.org/catkin/package.xml}{package.xml}.
 \vspace{-1mm}
 \begin{nstabbing}
@@ -552,9 +520,8 @@ U\=sage:\\
 \> \texttt{\$ catkin\_create\_pkg <package\_name> [depend1] [depend2]}\\
 E\=x\=ample:\\
 \> \texttt{\$ cd \textasciitilde/catkin\_ws/src}\\
-\> \texttt{\$ catkin\_create\_pkg tutorials std\_msgs rospy roscpp}\\
+\> \texttt{\$ catkin\_create\_pkg tutorials std\_msgs rospy roscpp}
 \end{nstabbing}
-\vspace{-3mm}
 
 \subsection{\href{http://wiki.ros.org/catkin/Tutorials/using_a_workspace}{Build all packages in a workspace}}
 Use \href{http://wiki.ros.org/catkin/Tutorials/using\_a\_workspace}{catkin\_make} to build all the packages in the workspace and then source the setup.bash to add the workspace to the \href{http://wiki.ros.org/ROS/EnvironmentVariables#ROS_PACKAGE_PATH}{ROS\_PACKAGE\_PATH}.
@@ -563,42 +530,37 @@ Use \href{http://wiki.ros.org/catkin/Tutorials/using\_a\_workspace}{catkin\_make
 E\=x\=amples:\\
 \> \texttt{\$ cd \textasciitilde/catkin\_ws}\\
 \> \texttt{\$ \textasciitilde/catkin\_make}\\
-\> \texttt{\$ source devel/setup.bash}\\
+\> \texttt{\$ source devel/setup.bash}
 \end{nstabbing}
-\vspace{-3mm}
 
-%\vspace{-4.5 mm}
 \subsection{\href{http://wiki.ros.org/catkin/CMakeLists.txt}{CMakeLists.txt}}
-\vspace{-.5 mm}
-
-\begin{tabbing}
+\vspace{-1mm}
+\begin{nstabbing}
 Y\=our CMakeLists.tx\=t file MUST follow this format otherwise\\ your
 packages will not build correctly.\\
 \> \texttt{cmake\_minimum\_required()} Specify the name of the package\\
 \> \texttt{project()} Project name which can refer as \$\{PROJECT\_NAME\}\\
-\> \texttt{find\_package()} \> Find other packages needed for build\\
+\> \texttt{find\_package()} Find other packages needed for build\\
 %\texttt{add\_message\_files(), add\_service\_files(), add\_action\_files()} & Message/Service/Action Generators\\
 %\texttt{generate\_messages()} & Invoke message/service/action generation\\
-\> \texttt{catkin\_package()} \> Specify package build info export\\
+\> \texttt{catkin\_package()} Specify package build info export
 %\texttt{add\_library(), add\_executable(), target\_link\_libraries()} & Libraries/Executables to build\\
 %\texttt{catkin\_add\_gtest()} & Tests to build\\
-%\texttt{install()} & Install rules\\
-\end{tabbing}
-\vspace{-3.5mm}
-\vspace{-2mm}
+%\texttt{install()} & Install rules
+\end{nstabbing}
+
 {\bf Build Executables and Libraries:}\\
 Use CMake function to build executable and library targets. These
 macro should call after \texttt{catkin\_package()} to use
 \texttt{catkin\_*} variables.
-\vspace{-3.5mm}
-\begin{tabbing}
+\vspace{-1mm}
+\begin{nstabbing}
 ~ \texttt{include\_directories(include \$\{catkin\_INCLUDE\_DIRS\})}\\
 ~ \texttt{add\_executable(hoge src/hoge.cpp)}\\
 ~ \texttt{add\_library(fuga src/fuga.cpp)}\\
-~ \texttt{target\_link\_libraries(hoge fuga \$\{catkin\_LIBRARIES\})}\\
-\end{tabbing}
-\vspace{-3.5mm}
-\vspace{-2mm}
+~ \texttt{target\_link\_libraries(hoge fuga \$\{catkin\_LIBRARIES\})}
+\end{nstabbing}
+
 {\bf Message generation:}\\
 %Your \texttt{package.xml} must contain a build and runtime dependency on
 %\texttt{message\_generation} and \texttt{message\_runtime} respectively.
@@ -607,25 +569,20 @@ macro should call after \texttt{catkin\_package()} to use
 There are \texttt{add\_\{message,service,action\}\_files()}
 macros to handle messages,services and actions
 respectively. They must call before \texttt{catkin\_package()}.
-\vspace{-3.5mm}
-\begin{tabbing}
+\vspace{-1mm}
+\begin{nstabbing}
 ~ \texttt{find\_package(catkin COMPONENTS message\_generation std\_msgs)}\\
 ~ \texttt{add\_message\_files(FILES Message1.msg)}\\
 ~ \texttt{generate\_messages(DEPENDENCIES std\_msgs)}\\
-~ \texttt{catkin\_package(CATKIN\_DEPENDS message\_runtime)}\\
-\end{tabbing}
-\vspace{-5mm}
+~ \texttt{catkin\_package(CATKIN\_DEPENDS message\_runtime)}
+\end{nstabbing}
+
 If your package builds messages as well as executables that use them,
 you need to create an explicit dependency.
-\vspace{-3.5mm}
-\begin{tabbing}
-~ \texttt{add\_dependencies(hoge \$\{PROJECT\_NAME\}\_generate\_messages\_cpp)}\\
-\end{tabbing}
-
-\vspace{-5mm}
-
-%\vspace{30mm}
-%\vspace{-10mm}
+\vspace{-1mm}
+\begin{nstabbing}
+~ \texttt{add\_dependencies(hoge \$\{PROJECT\_NAME\}\_generate\_messages\_cpp)}
+\end{nstabbing}
 
 \else % \ifcatkin
 
